@@ -6,6 +6,8 @@ function myFunction(){
     
     var ss = GetSpreadsheet(SheetID); // スプレッドシート
     var sheet = GetSheet(SheetName,ss); // シート
+    var range = sheet.getDataRange();
+    Logger.log(range.getValue());
 }
 
 // スプレッドシートの取得
