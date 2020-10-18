@@ -3,9 +3,21 @@ var SheetName = 'ISBN'; // シートの名前
 
 function myFunction(){
     Logger.log("Hello World!");
+    
+    var ss = GetSpreadsheet(SheetID); // スプレッドシート
+    var sheet = GetSheet(SheetName,ss); // シート
+}
 
-    var ss = SpreadsheetApp.openById(SheetID); // スプレッドシートの取得
-    //Logger.log(ss.getName());
-    var sheet = ss.getSheetByName(SheetName); // シートの取得
-    //Logger.log(sheet.getSheetValues(1,1,1,1));
+// スプレッドシートの取得
+function GetSpreadsheet(sheetID){
+    var ss = SpreadsheetApp.openById(sheetID);
+    Logger.log(ss.getName() + "を取得");
+    return ss;
+}
+
+// シートの取得
+function GetSheet(sheetName,spreadSheet){
+    var sheet = spreadSheet.getSheetByName(sheetName);
+    Logger.log(sheet.getName() + "を取得");
+    return sheet;
 }
