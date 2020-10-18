@@ -5,18 +5,26 @@ function myFunction() {
     Logger.log("Hello World!");
     var ss = GetSpreadsheet(SheetID); // スプレッドシート
     var sheet = GetSheet(SheetName, ss); // シート
-    var range = sheet.getDataRange();
-    Logger.log(range.getValue());
+    var range = GetCell(sheet,1,1); // セル
 }
+
 // スプレッドシートの取得
 function GetSpreadsheet(sheetID) {
     var ss = SpreadsheetApp.openById(sheetID);
     Logger.log(ss.getName() + "を取得");
     return ss;
 }
+
 // シートの取得
 function GetSheet(sheetName, spreadSheet) {
     var sheet = spreadSheet.getSheetByName(sheetName);
     Logger.log(sheet.getName() + "を取得");
     return sheet;
+}
+
+// セルの取得
+function GetCell(sheet,row,column){
+    var cell = sheet.getRange(row,column);
+    Logger.log(cell.getValue() + "を取得");
+    return cell;
 }
