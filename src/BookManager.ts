@@ -1,5 +1,5 @@
-var SheetID = '1stX9PL4QHZSwgKOExJ8LvRp3ZX9obRqY6b83fsIARTg'; // スプレッドシートID
-var SheetName = 'ISBN'; // シートの名前
+const SheetID = '1stX9PL4QHZSwgKOExJ8LvRp3ZX9obRqY6b83fsIARTg'; // スプレッドシートID
+const SheetName = 'ISBN'; // シートの名前
 
 function myFunction(){
     Logger.log("Hello World!");
