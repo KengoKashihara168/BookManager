@@ -16,7 +16,7 @@ function GetSpreadsheet(sheetID) {
 }
 
 // シートの取得
-function GetSheet(sheetName, spreadSheet) {
+function GetSheet(spreadSheetsheetName) {
     var sheet = spreadSheet.getSheetByName(sheetName);
     Logger.log(sheet.getName() + "を取得");
     return sheet;
