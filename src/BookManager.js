@@ -12,7 +12,12 @@ function myFunction() {
     var query = UrlFetchApp.fetch(url);
     //Logger.log(query);
     var json = JSON.parse(query);
-    Logger.log(json);
+    Logger.log(json[0].summary.title);
+    Logger.log(json[0].summary.author);
+    Logger.log(json[0].summary.publisher);
+    Logger.log(json[0].onix.DescriptiveDetail.Collection.TitleDetail.TitleElement[0].TitleText.content);
+    Logger.log(json[0].onix.ProductSupply.SupplyDetail.Price[0].PriceAmount);
+    Logger.log(json[0].onix.DescriptiveDetail.ProductFormDetail);
 }
 
 // スプレッドシートの取得
