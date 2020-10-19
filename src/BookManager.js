@@ -4,8 +4,10 @@ var SheetName = 'ISBN'; // シートの名前
 function myFunction() {
     Logger.log("Hello World!");
     var ss = GetSpreadsheet(SheetID); // スプレッドシート
-    var sheet = GetSheet(SheetName, ss); // シート
-    var range = GetCell(sheet,1,1); // セル
+    var sheet = GetSheet(ss,SheetName); // シート
+    var cell = GetCell(sheet,1,1); // セル
+    var isbn = cell.getValue(); // ISBN
+    Logger.log(isbn + "を検索");
 }
 
 // スプレッドシートの取得
@@ -16,7 +18,7 @@ function GetSpreadsheet(sheetID) {
 }
 
 // シートの取得
-function GetSheet(spreadSheetsheetName) {
+function GetSheet(spreadSheet,sheetName) {
     var sheet = spreadSheet.getSheetByName(sheetName);
     Logger.log(sheet.getName() + "を取得");
     return sheet;
