@@ -1,23 +1,15 @@
 // Compiled using ts2gas 3.6.3 (TypeScript 3.9.7)
 var SheetID = '1stX9PL4QHZSwgKOExJ8LvRp3ZX9obRqY6b83fsIARTg'; // スプレッドシートID
 var SheetName = 'ISBN'; // シートの名前
-var API_URL = 'https://api.openbd.jp/v1/get?isbn=';
+
 
 function myFunction() {
     Logger.log("Hello World!");
     var isbn = GetISBN(); // ISBNを取得
     Logger.log(isbn + "を検索");
-    var url = API_URL + isbn + "&pretty";
-    //Logger.log(url);
-    var query = UrlFetchApp.fetch(url);
-    //Logger.log(query);
-    var json = JSON.parse(query);
-    Logger.log(json[0].summary.title);
-    Logger.log(json[0].summary.author);
-    Logger.log(json[0].summary.publisher);
-    Logger.log(json[0].onix.DescriptiveDetail.Collection.TitleDetail.TitleElement[0].TitleText.content);
-    Logger.log(json[0].onix.ProductSupply.SupplyDetail.Price[0].PriceAmount);
-    Logger.log(json[0].onix.DescriptiveDetail.ProductFormDetail);
+
+    // OpenBDからJSONの取得
+    GetOpenBD(isbn);
 }
 
 // スプレッドシートの取得
