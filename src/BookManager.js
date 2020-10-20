@@ -18,6 +18,7 @@ function myFunction() {
     Logger.log(json[0].onix.DescriptiveDetail.Collection.TitleDetail.TitleElement[0].TitleText.content);
     Logger.log(json[0].onix.ProductSupply.SupplyDetail.Price[0].PriceAmount);
     Logger.log(json[0].onix.DescriptiveDetail.ProductFormDetail);
+    test();
 }
 
 // スプレッドシートの取得
