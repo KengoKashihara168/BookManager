@@ -9,7 +9,8 @@ function myFunction() {
     Logger.log(isbn + "を検索");
 
     // OpenBDからJSONの取得
-    GetOpenBD(isbn);
+    //GetOpenBD(isbn);
+    GetNDL(isbn);
 }
 
 // スプレッドシートの取得
