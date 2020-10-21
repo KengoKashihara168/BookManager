@@ -1,4 +1,4 @@
-var API_URL = 'https://api.openbd.jp/v1/get?isbn=';
+var OpenBD_URL = 'https://api.openbd.jp/v1/get?isbn=';
 var title = '';
 var author = '';
 var publisher = '';
