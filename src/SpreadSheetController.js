@@ -30,3 +30,10 @@ function GetISBN(){
 
     return isbn;
 }
+
+function SetCell(text){
+    var ss = GetSpreadsheet(SheetID); // スプレッドシート
+    var sheet = GetSheet(ss,SheetName); // シート
+    var cell = GetCell(sheet,2,1); // セル
+    cell.setValue(text);
+}
