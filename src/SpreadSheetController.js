@@ -9,8 +9,9 @@ function GetSpreadsheet(sheetID) {
 }
 
 // シートの取得
-function GetSheet(spreadSheet,sheetName) {
-    var sheet = spreadSheet.getSheetByName(sheetName);
+function GetSheet(sheetName) {
+    var ss = GetSpreadsheet(SheetID);
+    var sheet = ss.getSheetByName(sheetName);
     //Logger.log(sheet.getName() + "を取得");
     return sheet;
 }
@@ -24,7 +25,7 @@ function GetCell(sheet,row,column){
 
 function GetISBN(){
     var ss = GetSpreadsheet(SheetID); // スプレッドシート
-    var sheet = GetSheet(ss,SheetName); // シート
+    var sheet = GetSheet(SheetName); // シート
     var cell = GetCell(sheet,1,1); // セル
     var isbn = cell.getValue(); // ISBN
 
@@ -32,8 +33,15 @@ function GetISBN(){
 }
 
 function SetCell(text){
-    var ss = GetSpreadsheet(SheetID); // スプレッドシート
-    var sheet = GetSheet(ss,SheetName); // シート
+    var sheet = GetSheet(SheetName); // シート
     var cell = GetCell(sheet,2,1); // セル
     cell.setValue(text);
+}
+
+function GetLastCell(header)
+{
+    var sheet = GetSheet(SheetName);
+    var textFinder = sheet.createTextFinder(header);
+    var findCell = textFinder.findNext();
+    return findCell;
 }

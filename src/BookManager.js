@@ -9,6 +9,7 @@ function myFunction() {
     //GetOpenBD(isbn);
     //GetNDL(isbn);
     //SetCell(isbn);
+    GetLastCell("ISBN");
 }
 
 
